@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0E35F07-6F8C-4DC7-9974-45D114F2586A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RoleAuthorizationLab3</RootNamespace>
+    <AssemblyName>RoleAuthorizationLab3</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="EntityFramework"><HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath></Reference>
+    <Reference Include="EntityFramework.SqlServer"><HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Data\Role.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Data\User_DataEntities.cs" />
+    <Compile Include="Forms\FormAutorization.cs" />
+    <Compile Include="Forms\RoleFormBase.cs" />
+    <Compile Include="Forms\FormManager.cs" />
+    <Compile Include="Forms\FormSeller.cs" />
+    <Compile Include="Forms\FormDirector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <Content Include="User_Data.sql" />
+    <Content Include="Photo\1.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="Photo\2.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="Photo\3.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="Photo\4.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="Photo\5.png"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
